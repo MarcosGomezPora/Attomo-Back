@@ -4,12 +4,10 @@ const gameSchema = new mongoose.Schema(
     {
         image: { type: String, trim: true},
         name: { type: String, trim: true},
-        vote: { type: String, trim: true},
+        /* vote: { type: String, trim: true}, */
         category: [
-            {
-               categories: { type: String, trim: true}
-            },
-        ],
+            { type: String, trim: true, },
+          ],
         /* comments: [
             {
                 comment: { type: mongoose.Types.ObjectId,

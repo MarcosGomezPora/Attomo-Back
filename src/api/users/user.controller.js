@@ -12,6 +12,15 @@ const register = async (req, res, next) => {
     }
 };
 
+const getUsers = async (req, res, next) => {
+  try {
+    const userDB = await User.find();
+    return res.status(200).json(userDB);
+  } catch (error) {
+    return next(setError(404, "user server fail"));
+  }
+};
+
 const deleteUser = async (req, res, next) => {
     try {
       const { id } = req.params;
@@ -72,6 +81,7 @@ const changePassword = async (req, res, next) => {
 
 module.exports = {
     register,
+    getUsers,
     deleteUser,
     login,
     changePassword
