@@ -6,8 +6,8 @@ const { getGames, getGameById, postNewGame, putGame, deleteGame } = require('./g
 
 GameRoutes.get('/', getGames);
 GameRoutes.get('/id/:id', getGameById),
-GameRoutes.post('/create', postNewGame),
-GameRoutes.put('/edit/:id', putGame),
-GameRoutes.delete('/delete/:id', deleteGame);
+GameRoutes.post('/create', [isAdmin], postNewGame),
+GameRoutes.put('/edit/:id', [isAdmin], putGame),
+GameRoutes.delete('/delete/:id', [isAdmin], deleteGame);
 
 module.exports = GameRoutes;
