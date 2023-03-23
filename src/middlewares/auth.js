@@ -24,6 +24,7 @@ console.log(parsedToken)
 };
 
 const isAdmin = async (req, res, next) => {
+  console.log('hola2');
   try {
     const token = req.headers.authorization;
     if (!token) {

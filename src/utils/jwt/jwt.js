@@ -6,13 +6,10 @@ const generateToken = (id, user) => {
 
 const verifyJwt = (token) => {
   try{
-  console.log('entra en verificarToken ' + token + "   " + process.env.JWT_SECRET) 
-  let a = jwt.verify(token, process.env.JWT_SECRET);
-  console.log('pasa a')
-  console.log(a)
-  return a
+  return  jwt.verify(token, process.env.JWT_SECRET);
+  
   }catch{
-    console.log('el error es este')
+    console.log(error)
   }
 };
 

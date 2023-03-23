@@ -32,6 +32,7 @@ const deleteUser = async (req, res, next) => {
 };
 
 const login = async (req, res, next) => {
+    console.log('hola');
     try {
       const userDB = await User.findOne({ user: req.body.user });
       if (!userDB) {
