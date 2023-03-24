@@ -8,12 +8,6 @@ const gameSchema = new mongoose.Schema(
             { type: String, trim: true, },
         ],
         votes: { type: Number, default: 0 },
-        /* comments: [
-            {
-                comment: { type: mongoose.Types.ObjectId,
-                ref: "comments"}
-            }
-        ] */
     },
     { timestamps: true }
 )
